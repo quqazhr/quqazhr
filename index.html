@@ -1,254 +1,59 @@
-
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>القوقز - التوصيل السريع</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Tajawal', sans-serif;
-    }
-
-    body {
-      background-color: #f8f8f8;
-      color: #222;
-      line-height: 1.7;
-    }
-
-    header {
-      background: linear-gradient(to left, #ff9100, #ff6f00);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.2em;
-      font-weight: 300;
-    }
-
-    nav {
-      margin-top: 20px;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1em;
-    }
-
-    .hero {
-      background: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437b6') no-repeat center center/cover;
-      padding: 100px 20px;
-      color: white;
-      text-align: center;
-      position: relative;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
-      background: rgba(0, 0, 0, 0.6);
-    }
-
-    .hero h2, .hero p {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero h2 {
-      font-size: 2.8em;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.3em;
-      max-width: 600px;
-      margin: auto;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .feature {
-      flex: 1 1 calc(33% - 20px);
-      background-color: white;
-      border-radius: 10px;
-      padding: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s;
-    }
-
-    .feature:hover {
-      transform: translateY(-5px);
-    }
-
-    .feature h3 {
-      color: #ff6f00;
-      margin-bottom: 10px;
-      font-size: 1.4em;
-    }
-
-    .feature p {
-      color: #444;
-    }
-
-    form {
-      background-color: white;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      max-width: 700px;
-      margin: auto;
-    }
-
-    form label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 8px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1em;
-    }
-
-    form button {
-      background-color: #ff6f00;
-      color: white;
-      border: none;
-      padding: 14px 30px;
-      font-size: 1em;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-
-    form button:hover {
-      background-color: #e65c00;
-    }
-
-    footer {
-      background-color: #222;
-      color: #ccc;
-      text-align: center;
-      padding: 30px 10px;
-      margin-top: 60px;
-      font-size: 0.95em;
-    }
-
-    @media (max-width: 768px) {
-      .features {
-        flex-direction: column;
-      }
-
-      .feature {
-        flex: 1 1 100%;
-      }
-
-      .hero h2 {
-        font-size: 2em;
-      }
-
-      .hero p {
-        font-size: 1em;
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>القوقز | التوصيل السريع</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // (اختياري) تخصيص إعدادات Tailwind
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // يمكنك إضافة ألوان مخصصة هنا
+          }
+        }
       }
     }
-  </style>
-</head>
-<body>
+  </script>
+    <style>
+      @font-face {
+        font-family: "Droid Arabic Kufi-Bold";
+        src: url("https://anima-uploads.s3.amazonaws.com/5bd1dfb91f5e09000a1882de/DroidKufi-Bold.ttf")
+          format("truetype");
+      }
 
-  <header>
-    <h1>القوقز ... وسيلتك الآمنة لنقل البضائع</h1>
-    <p>الحل الأسرع والأذكى لتوصيل الطرود داخل وخارج المدينة</p>
-    <nav>
-      <a href="#services">الخدمات</a>
-      <a href="#about">من نحن</a>
-      <a href="#contact">تواصل معنا</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h2>وصّلها بذكاء... مع القوقز</h2>
-    <p>اضمن تسليم الشحنة بجودة عالية كما تم استلامها، سواء كانت الشحنة بضائع منوعة أو أدوات منزلية أو أمتعة شخصية لجميع محافظات العراق.</p>
-  </section>
-
-  <section id="services">
-    <h2 style="text-align:center; color:#ff6f00; font-size:2em;">ماذا نقدّم؟</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>توصيل في نفس اليوم</h3>
-        <p>لا وقت للانتظار؟ نقدّم خدمة توصيل فائقة السرعة داخل المدينة خلال ساعات.</p>
-      </div>
-      <div class="feature">
-        <h3>تتبع مباشر وفوري</h3>
-        <p>تابع موقع مندوبك لحظة بلحظة عبر تطبيقنا الذكي، وكن على اطلاع دائم بحالة طلبك.</p>
-      </div>
-      <div class="feature">
-        <h3>خدمة عملاء مميزة</h3>
-        <p>نحن هنا دائمًا من أجلك، فريقنا متواجد 24/7 للرد على استفساراتك وحل مشاكلك.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <h2 style="text-align:center; color:#ff6f00; font-size:2em;">من نحن</h2>
-    <p style="max-width: 800px; margin: 30px auto; text-align: center;">
-     شركة القوقز تقدم خدمات النقل السريع على مستوى جمهورية العراق العربية نفتخر بتقديم افضل خدمة و باقل من اسعار السوق، أسرع خدمة و أفضل سعر و خبرة كبيرة في مجال الشحن و في مجال إدارة المخازن و تقديم أفضل الاستشارات الإدارية.
-    </p>
-  </section>
-
-  <section id="contact">
-    <h2 style="text-align:center; color:#ff6f00; font-size:2em;">هل تحتاج إلى خدمة توصيل؟</h2>
-    <p style="text-align:center; margin-bottom: 20px;">املأ النموذج وسنقوم بالتواصل معك في أقرب وقت ممكن</p>
-    <form>
-      <label>الاسم الكامل</label>
-      <input type="text" placeholder="أدخل اسمك" required>
-
-      <label>رقم الجوال</label>
-      <input type="tel" placeholder="05xxxxxxxx" required>
-
-      <label>البريد الإلكتروني</label>
-      <input type="email" placeholder="example@email.com" required>
-
-      <label>الرسالة</label>
-      <textarea rows="5" placeholder="أخبرنا بما تحتاج إليه..." required></textarea>
-
-      <button type="submit">إرسال الطلب</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>© 2025 القوقز للتوصيل السريع. جميع الحقوق محفوظة.</p>
-  </footer>
-
-</body>
+      @font-face {
+        font-family: "Droid Arabic Kufi-Regular";
+        src: url("https://anima-uploads.s3.amazonaws.com/projects/640717d4e5020cdcffa5b1eb/fonts/droid-arabic-kufi_downloadsoftware-ir_.ttf")
+          format("truetype");
+      }
+    </style>
+    <style>
+      @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+      * {
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0px;
+        height: 100%;
+      }
+      /* a blue color as a generic focus style */
+      button:focus-visible {
+        outline: 2px solid #4a90e2 !important;
+        outline: -webkit-focus-ring-color auto 5px !important;
+      }
+      a {
+        text-decoration: none;
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-C_o_d5af.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BmvDWz7M.css">
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
 </html>
